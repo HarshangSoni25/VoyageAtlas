@@ -1,0 +1,338 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HALLSTATT AUSTRIA</title>
+
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont;
+        background:#000;
+        color:#fff;
+        line-height:1.6;
+        overflow-x:hidden;
+    }
+
+    /* ================= HEADER ================= */
+
+    header{
+        position:fixed;
+        top:0;
+        width:100%;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(10px);
+        z-index:1000;
+        padding: 10px 0;
+    }
+
+    nav{
+        max-width:1200px;
+        margin:auto;
+        padding:0 20px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    nav a{
+        color:#fff;
+        text-decoration:none;
+        margin-left:20px;
+        font-weight:500;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+        height:100vh;
+        background:url("Hallstatt_insidehome_1.jpg") center/cover no-repeat;
+    }
+
+    /* ================= SECTION LAYOUT ================= */
+
+    .section{
+        max-width:1200px;
+        margin:120px auto;
+        padding:0 20px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:60px;
+        align-items:center;
+    }
+
+    .section img,
+    .section video{
+        width:100%;
+        border-radius:16px;
+        object-fit:cover;
+        transition:0.4s ease;
+    }
+
+    /* ================= VIDEO SECTION ================= */
+
+    .video-section{
+        display:grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        align-items:center;
+        gap:30px;
+        max-width:1200px;
+        margin:120px auto;
+    }
+
+    .video-wrapper{
+        width:100%;
+        height:420px;
+        border-radius:16px;
+        overflow:hidden;
+        transition:0.4s ease;
+    }
+
+    .video-wrapper video{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+    /* ================= TEXT ================= */
+
+    .text{
+        background: rgba(255,255,255,0.05);
+        padding:30px;
+        border-radius:16px;
+        border:1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        transition:0.4s ease;
+    }
+
+    .text h2{
+        margin-bottom:15px;
+        font-size:28px;
+    }
+
+    /* ================= ANIMATION DIRECTIONS ================= */
+
+    .from-left{
+        opacity:0;
+        transform: translateX(-120px);
+        transition: all 1s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .from-right{
+        opacity:0;
+        transform: translateX(120px);
+        transition: all 1s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .from-bottom{
+        opacity:0;
+        transform: translateY(150px);
+        transition: all 1s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .show{
+        opacity:1;
+        transform: translate(0,0);
+    }
+
+    /* ================= GLOW EFFECT ================= */
+
+    .glow-video{
+        box-shadow: 0 0 30px rgba(0,255,255,0.6);
+    }
+
+    .glow-text{
+        box-shadow: 0 0 20px rgba(0,255,255,0.4);
+        border:1px solid rgba(0,255,255,0.6);
+    }
+
+    /* ================= GOOGLE MAP BUTTON ================= */
+
+    .map-btn{
+        display:inline-block;
+        padding:20px 30px;
+        background:#111;
+        color:#fff;
+        border-radius:14px;
+        text-decoration:none;
+        font-weight:bold;
+        margin-top:20px;
+        border:1px solid rgba(0,255,255,0.5);
+        transition:0.4s ease;
+        animation: pulseGlow 2.5s infinite;
+    }
+
+    .map-btn:hover{
+        transform: scale(1.05);
+        box-shadow:0 0 25px rgba(0,255,255,0.8);
+    }
+
+    /* Pulsing glow animation */
+    @keyframes pulseGlow{
+        0%{
+            box-shadow:0 0 10px rgba(0,255,255,0.4);
+        }
+        50%{
+            box-shadow:0 0 25px rgba(0,255,255,0.8);
+        }
+        100%{
+            box-shadow:0 0 10px rgba(0,255,255,0.4);
+        }
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+        text-align:center;
+        padding:40px 20px;
+        color:#aaa;
+        background:#111;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width:900px){
+        .section,
+        .video-section{
+            grid-template-columns:1fr;
+            text-align:center;
+        }
+
+        .video-wrapper{
+            height:260px;
+        }
+    }
+    </style>
+    </head>
+
+    <body>
+
+    <header>
+        <nav>
+            <strong>HALLSTATT AUSTRIA</strong>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="locations.html">Locations</a>
+                <a href="Know More.html">Know More</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero"></section>
+
+    <!-- SECTION 1 -->
+    <section class="section">
+
+        <img src="Hallstatt_insidehome_2.jpg" class="from-left">
+
+        <div class="text from-right">
+            <h2>History</h2>
+            <p>
+                Hallstatt’s history dates back over 7,000 years.
+                It became wealthy through ancient salt mining,
+                shaping one of Europe’s oldest Alpine settlements.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="video-section">
+
+        <div class="text from-left">
+            <h2>Culture</h2>
+            <p>
+                Hallstatt reflects traditional Austrian Alpine life,
+                wooden houses, lake views and strong heritage traditions.
+            </p>
+        </div>
+
+        <div class="video-wrapper from-bottom">
+            <video autoplay muted loop playsinline>
+                <source src="Hallstatt_video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="text from-right">
+            <h2>Location</h2>
+            <p>
+                Located in Upper Austria between a serene lake
+                and the dramatic Dachstein Alps.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="section">
+
+        <div class="text from-left">
+            <h2>Why it Matters</h2>
+            <p>
+                Hallstatt blends natural beauty with deep European history,
+                giving its name to the ancient Hallstatt Culture.
+            </p>
+        </div>
+
+        <video autoplay muted loop playsinline class="from-right">
+            <source src="Hallstattvideo2.mp4" type="video/mp4">
+        </video>
+
+    </section>
+
+    <!-- GOOGLE MAP SECTION -->
+    <section style="max-width:1200px; margin:80px auto; padding:0 20px; text-align:center;">
+        <h2>Find HALLSTATT on Google Maps</h2>
+        <a href="https://maps.app.goo.gl/fuBc5UEsNdjQSaWT9" 
+        target="_blank"
+        class="map-btn">
+            Open Map in Google Maps
+        </a>
+    </section>
+
+    <footer>
+        © 2026 Gujarat Heritage.
+    </footer>
+
+    <script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+                setTimeout(()=>{
+                    if(
+                        entry.target.tagName === "VIDEO" || 
+                        entry.target.tagName === "IMG" ||
+                        entry.target.classList.contains("video-wrapper")
+                    ){
+                        entry.target.classList.add("glow-video");
+                    }
+
+                    if(entry.target.classList.contains("text")){
+                        entry.target.classList.add("glow-text");
+                    }
+
+                }, 900);
+
+            } else {
+                entry.target.classList.remove("show","glow-video","glow-text");
+            }
+
+        });
+    },{ threshold:0.35 });
+
+    document.querySelectorAll(".from-left, .from-right, .from-bottom")
+    .forEach(el => observer.observe(el));
+    </script>
+
+    </body>
+    </html>
