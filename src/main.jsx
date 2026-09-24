@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import * as THREE from 'three';
 import './styles.css';
 
-const A = '/assets/';
+const A = `${import.meta.env.BASE_URL}assets/`;
 const destinationMotion = {
   edinburgh: { mood: 'cold', reveal: 'architectural', accent: 'var(--cyan)' },
   lauterbrunnen: { mood: 'alpine', reveal: 'vertical', accent: 'var(--cyan)' },
